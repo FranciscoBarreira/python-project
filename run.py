@@ -11,8 +11,8 @@ def game_word():
         return random.choice(chosen_word)
 
 
-print("Let's play Wordle:")
-print("Type a 5 letter word and hit enter!\n")
+print("It's time for Wordle:")
+print("Think of a 5 letter word, type it and press enter!\n")
 play_again = ""
 while play_again != "q":
     
@@ -30,7 +30,7 @@ while play_again != "q":
 
 
 
-        for i in range( 0, 5):
+        for i in range(0, 5):
             if guess[i] == word[i]:
                 print(colored(guess[i], 'green'), end="")
             elif guess[i] in word:
