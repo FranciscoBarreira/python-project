@@ -25,17 +25,29 @@ def show_instructions():
 
 
 def show_menu():
-    select_option = input("Type 1) Play game, 2) Show instructions 3) Quit\n")
-    if select_option == '1':
-        start_game()
-    elif select_option == '2':
-        show_instructions()
-    else:
-        print('Thanks for playing')
+    while True:
+        select_option = input("Type 1) Play game, 2) Show instructions 3) Quit\n")
+        if select_option == '1':
+            start_game()
+        elif select_option == '2':
+            show_instructions()
+        elif select_option == '3':
+            print('Thanks for playing')
+        else: 
+            try:
+                if select_option != 1 and 2 and 3 :
+                    raise ValueError(
+                        f"Please type 1, 2 or 3"
+                    )
+                else:
+                    return guess
+            except ValueError as e:
+                print(f"Invalid data: {e}, please try again.\n")
+   
 
 def take_user_guess():
     while True:
-        guess = input("Think of a 5 letter word, type it and press enter!\n").lower()
+        guess = input("Type any 5 letter word and press enter!\n").lower()
         try:
             if len(guess) != 5:
                 raise ValueError(
@@ -52,17 +64,17 @@ def start_game():
         word = get_random_word().lower()
         for attempt in range(1, MAX_ATTEMPTS + 1):
             user_guess = take_user_guess()
-            for i in range(0, 5): # Since word is a 5 letter word
-                if user_guess[i] == word[i]: #If position of letter matches in original word
+            for i in range(0, 5):    # Since word is a 5 letter word
+                if user_guess[i] == word[i]:     # If position of letter matches in original word
                     print(colored(user_guess[i], 'green'), end="")
-                elif user_guess[i] in word: #If letter is present in original word
+                elif user_guess[i] in word:     # If letter is present in original word
                     print(colored(user_guess[i], 'yellow'), end="")
                 else:
                     print(user_guess[i], end="")
             print("\n")
 
             if user_guess == word:
-                print(colored(f"Woo! You answered in {attempt} attempts", 'red'))
+                print(colored(f"Woo! You got it in {attempt} attempts", 'red'))
                 break
             elif attempt == 6:
                 print(f"Nice try. The answer for this round was {word}")
