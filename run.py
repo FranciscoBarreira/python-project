@@ -26,21 +26,24 @@ def show_instructions():
 
 def show_menu():
     while True:
-        select_option = input("Type 1) Play game, 2) Show instructions 3) Quit\n")
+        select_option = input("Type 1) Play game, 2) Instructions 3) Quit\n")
         if select_option == '1':
             start_game()
+            break
         elif select_option == '2':
             show_instructions()
+            break
         elif select_option == '3':
             print('Thanks for playing')
+            break
         else: 
             try:
-                if select_option != 1 and 2 and 3 :
+                if select_option != 1 and 2 and 3:
                     raise ValueError(
-                        f"Please type 1, 2 or 3"
+                        f"Please type 1, 2 or 3. You typed {select_option}"
                     )
                 else:
-                    return guess
+                    return select_option
             except ValueError as e:
                 print(f"Invalid data: {e}, please try again.\n")
    
@@ -81,6 +84,7 @@ def start_game():
         play_again = input("Let's Go Again? Type q and press enter to exit.")
         if play_again == 'q':
             is_game_running = False
+       
 
 def print_welcome_msg():
     print("It's time for Wordle:")
