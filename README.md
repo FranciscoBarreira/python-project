@@ -1,34 +1,4 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome FranciscoBarreira,
-
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
-
-## Reminders
-
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
-
-## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
 
 ## Wordle in Python
 
@@ -38,7 +8,7 @@ This project is a fully functioning python wordle replica, in which players have
 a random 5 letter word. The user will type in a guess, hints will be visually displayed depending on the guess, and the player will try to get closer and closer to the game word. 
 
 
-The link to the deployed website can be found [here.](https://franciscobarreira.github.io/javascript-project/)
+The link to the deployed app can be found [here.](https://wordle-in-python.herokuapp.com//)
 
 The link to the Github repository can be found [here.](https://github.com/FranciscoBarreira/python-project/)
 
@@ -52,28 +22,24 @@ The link to the Github repository can be found [here.](https://github.com/Franci
    - [User Requirements](#user-requirements)
    - [User Stories](#user-stories)
 
-[Design](#design)   
 
-   - [Images](#images)
-   - [Colour Scheme](#colour-scheme)
-   - [Fonts](#fonts)
 
 [Technologies Used](#technologies-used) 
 
 [Features](#features)   
 
-   - [Logo](#logo)
-   - [Page Image](#page-image) 
-   - [Quiz Section](#quiz-section)
-   - [End Results Section](#ending-results-section)
-   - [Footer](#footer)  
+   - [Let's Play Wordle Screen](#lets-play-wordle-screen)
+   - [Instructions](#instructions) 
+   - [Play The Game](#play-the-game)
+   - [End Game](#end-game)
+   
 
 
 [Testing](#testing)   
 
    - [General Testing](#general-testing)
    - [Validator Testing](#validator-testing)
-   - [Responsiveness Testing](#responsiveness-testing)
+
 
 [Site Deployment](#site-deployment) 
 
@@ -93,55 +59,33 @@ The link to the Github repository can be found [here.](https://github.com/Franci
 ### User Requirements 
 <a name="user-requirements"></a>
 
-- The website should be easy to navigate
-- Restarting the Quiz should be intuitive
-- The right answer should turn green or red depending on whether it is right or wrong
-- The website's visuals should be centered around cinema
-- The number of right answers should be shown at the end
-- The website should adapt to different screen sizes on different devices
+- The app should have clear instructions on how to play the game
+- The app should have an option to play again
+- The letters should be coloured to provide hints on the word
+- The word_bank should have enough words for replayability
+
 
 
 ### User Stories
  <a name="user-stories"></a>
 
-- I want the website to visually transmit the art of cinema 
-- I want the text to be clean and legible
-- I want to know how well i did in the quiz
-- I want a way to restart the quiz in case I feel I can do better
-
-## Design
- <a name="design"></a>
-
- ------
-
-### Images 
-<a name="images"></a>
+- I want to be able to see the correct word if I lose
+- I want to be able to play the game as many times a I want
+- I want to be provided visual hints after each guess
 
 
-The dark image that serves as a background for all the pages, including the quiz, was taken from unsplash.com and is meant to contrast with the gold, creating a color palette that is usually associated with the movie industry.
 
-### Colour Scheme 
-<a name="colour-scheme"></a>
 
-Apart from background images, the main colours used were goldenrod rgb(218,165,32), white rgb(255,255,255), green rgb(0,128,0) and red rgb(255,0,0). Red and green were used for right or wrong answers. For the containers and backgrounds of both the heading and footer, goldenrod was the colour chosen. White was used as a background color for the answer buttons, and for the text in the rest of the buttons as well as the logo.  
-
-### Fonts 
-<a name="fonts"></a>
-
-Tittillium Web is used for the headings due to its visual appeal. The rest of the text is in Lato, a font that improves readability.
-
-## Technoligies Used
+## Technologies Used
 <a name="technologies-used"></a>
 
 ------
 
-This site was deployed to GitHub pages. The steps to deploy it were:
 
--HTML for structural design of the website
 
--CSS for styling the pages 
+-Heroku for the app deployment
 
--JavaScript for adding functionality to the quiz 
+-Python to build the program
 
 -GitHub for software hosting
 
@@ -150,48 +94,44 @@ This site was deployed to GitHub pages. The steps to deploy it were:
 
 ## Features  
 <a name="features"></a>
+
 ------
 
-### Logo
-<a name="logo"></a>
+### Let's Play Wordle Screen
+<a name="lets-play-wordle-screen"></a>
   
-At the top of the page lies the heading containing the Test Your Movie Knowledge logo. It is a constant in every page and serves the purpose of maintaining visual consistency.
+This is the first screen that prompts once the program is running. It displays a welcome 
+message and a menu that gives the player the choice to play, see the instructions or quit.
 
-![logo image](/assets/images/home-quiz.png "logo")
-
-
-
-### Page Image
-<a name="page-image"></a>
-
-As shown in the image above, the home page contains two small containers, "Your Goals" and "Start Quiz". The first contains the information on how many right answers it would take to reach a certain tier. Users can choose to skip that information and just start the quiz right away, instead. 
+![wordle image](/images/wordle-screen.png "wordle")
 
 
 
-### Quiz Section
-<a name="quiz-section"></a>
+### Instructions
+<a name="instructions"></a>
 
-This is the main page of the website. It is where users will take part in the quiz. It consists of a quiz container, that holds both the questions and the answers, and a home button underneath so that the home page is always within reach. On the bottom of the quiz container, there is a counter so users can know how many right answers they have so far. When a user clicks the right answer, it turns green, otherwise, it turns red. At that point, a next button (which is hidden by default), shows up. By clicking it, the next question will appear, the right answers counter will update, and the colors(red or green) will disappear.   
+If the player types 2, this set of prints will show, explaining in detail the rules of the game.
 
-![quiz](/assets/images/quiz.png "quiz")
-
-
-### End Results Section
-<a name="end-results-section"></a>
-
-After clicking the next button on the final question, the whole quiz container will be hidden, and the final results container will be displayed. It contains the final number of right answers out of 15, and it reminds the user of how many it was required to be in each tier. Finally, there is a home and a start the quiz button. 
-
-![final results](/assets/images/end.png "final results")
+![instructions image](/images/instructions-image.png "instructions")
 
 
-### Footer
-<a name="footer"></a>
+### Play The Game
+<a name="play-the-game"></a>
 
-This is where users can find all the social media links. The background color is goldenrod to maintain visual consistency. There are aria labels in all of the links for screen readers. 
+This is when the game starts to unfold. After the user types a 5 letter word, that same word will be presented on screen with possibly some of the letters coloured. This works as a visual hint for
+the player. If the word is coloured yellow, they'll know that said letter is a part of the game word, but is in the wrong place. In the image below, we can see that n is not the last letter of the game word, so it must be somewhere else. If the letter is coloured green, then it is in the right place. For instance, using that same example, St are the first two letters of that word.
 
-All the icons were taken from "Font Awesome".
+![game image](/images/game-image.png "game")
 
-![footer section](/assets/images/footer-quiz.png "footer")
+
+### End Game
+<a name="end-game"></a>
+
+If you get the word right, a congratulatory message will be displayed, followed by the possibility to play again. If the player can't guess the word in six attempts, another message shows to let them know they didn't get the word right. The play again prompt still appears in this case.  
+
+![endgame image](/images/endgame-image.png "endgame")
+
+
 
 
 ## Testing
@@ -202,37 +142,24 @@ All the icons were taken from "Font Awesome".
 ### General Testing
 <a name="general-testing"></a>
 
-Lighthouse was used to test Performance, Accessibility, Best Practices and SEO. The results were the following:
+To make sure the game is played properly, two validation blocks were included in the code. 
+The first one ensures that, when the options menu appears, the only valid inputs are 1,2 or 3. Any other input will lead to a valueError and the user will be asked to input one of the available options.
 
-![lighthouse test](/assets/images/lighthouse-test.png "lighthouse test")
+![menu-error image](/images/menu-error.png "menu-error")
 
-The colors and fonts are very easy to read all across the website.
+The second validation block was put in place to make sure the word a player inputs is 5 letters long. If there was no limit to the number of letters, the player could just write the entire alphabet and find immediately which 5 letters are in the word. If a word of different lenght is input by the player, a valueError will be raised and they will be asked to type a 5 letter word.
+
+![word-error image](/images/word-error.png "word-error")
+
+
 
 ### Validator Testing
 <a name="validator-testing"></a>
 
-HTML- No errors were shown when put through the [HTML Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Ffranciscobarreira.github.io%2Fjavascript-project%2F)
+Pep8- No errors were shown when put through the pep8 requirements test.
 
-CSS- No errors were shown when put through the [CSS Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Ffranciscobarreira.github.io%2Fjavascript-project%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=pt-BR)
+![pep8 image](/images/pep8.png "pep8")
 
-JavaScript - No errors were shown when put through JShint validator, as shown in the image below.
-
-![jshint test](/assets/images/jshint.png "jshint test")
-
-### Responsiveness Testing
-<a name="responsiveness-testing"></a>
-
-The website responsiveness was tested using Chrome Dev Tools and was physically tested on a Samsung S20. It generally responded well to the different devices, however, there was a need to implement some changes, such as:
-
--Reducing the Logo font size to keep it from overflowing into the body of the page
-
--restructuring the quiz answers to keep them from overflowing the container
-
--repositioning the home and next button as they were negatively affecting each other's position in smaller screens  
-
--making width and margin related adjustments to the scorecard page to prevent it from deforming
-
--making width and margin related adjustments to the hidden div in the quiz page to prevent it from deforming
 
 
 ## Site Deployment
