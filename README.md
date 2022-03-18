@@ -32,7 +32,8 @@ The link to the Github repository can be found [here.](https://github.com/Franci
    - [Instructions](#instructions) 
    - [Play The Game](#play-the-game)
    - [End Game](#end-game)
-   
+
+[Program Diagram](#program-diagram)    
 
 
 [Testing](#testing)   
@@ -45,7 +46,6 @@ The link to the Github repository can be found [here.](https://github.com/Franci
 
 [Credits](#credits)   
 
-   - [Media](#media)
    - [Content](#content) 
   
 
@@ -91,6 +91,8 @@ The link to the Github repository can be found [here.](https://github.com/Franci
 
 -GitPod for development hosting
 
+-app.diagrams.net for the diagram
+
 
 ## Features  
 <a name="features"></a>
@@ -133,6 +135,17 @@ If you get the word right, a congratulatory message will be displayed, followed 
 
 
 
+## Program Diagram
+<a name="program-diagram"></a>
+
+------
+
+
+
+A diagram that breaks down the way the program works can be found in the image below.
+
+![diagram image](/images/diagram.png "diagram")
+
 
 ## Testing
 <a name="testing"></a>
@@ -167,15 +180,19 @@ Pep8- No errors were shown when put through the pep8 requirements test.
 
 ------
 
-This site was deployed to GitHub pages. The steps to deploy it were:
+This site was deployed to Heroku. The steps to deploy it were:
 
--In the GitHub repository, click on on settings 
+-Create a new app in Heroku 
 
--Scroll down to Github pages
+-In Settings, added PORT 8000 to config vars
 
--From the source section drop-down menu, select Main 
+-In Settings, press BuildPack, and add Python and Node.js 
 
--After all these steps are followed successfully the page will refresh and provide a link to the deployed website.
+-In the Deploy tab, select the deployment method (github was used in this case)
+
+-Click the connect button
+
+-Choose manual or automatic deploy (manual was used in this ocasion)
 
 
 
@@ -184,12 +201,6 @@ This site was deployed to GitHub pages. The steps to deploy it were:
 
 ------
 
-### Media
-<a name="media"></a>
-
-The background image used in the website was taken directly from Unsplash.com.
-
-All the icons were taken from "Font Awesome".
 
 ### Content
  <a name="content"></a>
@@ -197,4 +208,7 @@ All the icons were taken from "Font Awesome".
 For this project, the following sources of information were used:
 
 -Stackoverflow and w3schools for various code related doubts
+
+-Youtube Python Tutorials
+
 
