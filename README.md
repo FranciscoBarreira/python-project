@@ -13,7 +13,7 @@ The link to the deployed app can be found [here.](https://wordle-in-python.herok
 The link to the Github repository can be found [here.](https://github.com/FranciscoBarreira/python-project/)
 
 
-![mockup site generator image](/assets/images/mockup-quiz.png "mockup preview")
+![mockup site generator image](/images/mockup-image.png "mockup preview")
 
 ## Table of Contents 
 
