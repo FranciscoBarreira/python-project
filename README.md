@@ -93,6 +93,10 @@ The link to the Github repository can be found [here.](https://github.com/Franci
 
 -app.diagrams.net for the diagram
 
+-fsymbols.com for the emojis and ascii art
+
+-termcolor for coloring the letters
+
 
 ## Features  
 <a name="features"></a>

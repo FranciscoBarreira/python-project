@@ -1,5 +1,3 @@
-
-
 import random
 from termcolor import colored
 
@@ -85,7 +83,7 @@ def start_game():
     If that is the case, then those letters will be coloured
     yellow or green, depending on if position of letter matches
     in the originated word or not.
-    Presents a message for sucess or failure to guess the word
+    Presents a message for success or failure to guess the word
     and asks the user if they want to play again
     '''
     is_game_running = True
@@ -103,17 +101,28 @@ def start_game():
             print("\n")
 
             if user_guess == word:
-                print(colored(f"Woo! You got it in {attempt} attempts", 'red'))
+                print(colored(f"Woo! You got it in {attempt} tries💪", 'red'))
                 break
             elif attempt == 6:
-                print(f"Nice try. The answer for this round was {word}")
-        play_again = input("Let's Go Again? Type q and press enter to exit.")
+                print(f"Nice try. The answer for this round was {word}\n")
+        play_again = input("Let's Go Again? Type q and press enter to exit.\n")
         if play_again == 'q':
+            show_exit_message()
             is_game_running = False
 
 
+def show_exit_message():
+    print("Thanks for Playing Wordle👍👍\n")
+
+
 def print_welcome_msg():
-    print("It's time for Wordle:")
+    print("""
+░██╗░░░░░░░██╗░█████╗░██████╗░██████╗░██╗░░░░░███████╗
+░██║░░██╗░░██║██╔══██╗██╔══██╗██╔══██╗██║░░░░░██╔════╝
+░╚██╗████╗██╔╝██║░░██║██████╔╝██║░░██║██║░░░░░█████╗░░
+░░████╔═████║░██║░░██║██╔══██╗██║░░██║██║░░░░░██╔══╝░░
+░░╚██╔╝░╚██╔╝░╚█████╔╝██║░░██║██████╔╝███████╗███████╗
+░░░╚═╝░░░╚═╝░░░╚════╝░╚═╝░░╚═╝╚═════╝░╚══════╝╚══════╝\n""")
 
 
 def main():
